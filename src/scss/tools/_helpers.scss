@@ -1,0 +1,156 @@
+// Helper Classes & Extends
+// --------------------------------------------------
+// @import "./bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+// Text transform
+.caps,
+.text-uc { text-transform: uppercase; }
+.text-cp { text-transform: capitalize; }
+
+// Text decoration
+.text-lt { text-decoration: line-through; }
+.text-ul { 
+  text-decoration: underline;   
+  &:hover { text-decoration: none; }
+}
+
+
+// Text truncate
+.text-truncate { 
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.is-clickable { cursor: pointer; }
+
+%align-center {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.align-center { @extend %align-center; }
+
+// [ Responsive helper classes ]
+
+// Visibility helpers
+
+// Hidden on extra small screens 767px and below
+.xs-hidden         { @media(max-width: $screen-sm - 1){ display: none; } }
+// Hidden on extra small screens 767px and above
+.xs-min-hidden     { @media(min-width: $screen-sm-min - 1){ display: none; } }
+
+// Hidden on small screens 768px and below
+.sm-hidden         { @media(max-width: $screen-sm){ display: none; } }
+// Hidden on small screens 768px and above
+.sm-min-hidden     { @media(min-width: $screen-sm-min){ display: none; } }
+
+// Hidden on medium screens 992px and below
+.md-hidden         { @media(max-width: $screen-md){ display: none !important; } }
+// Hidden on medium screens 992px and above
+.md-min-hidden     { @media(min-width: $screen-md-min){ display: none !important; } }
+
+// Hidden on large screens 1200px and below
+.lg-hidden         { @media(max-width: $screen-lg){ display: none; } }
+// Hidden on large screens 1200px and above
+.lg-min-hidden     { @media(min-width: $screen-lg-min){ display: none; } }
+
+
+// Float helpers
+// -------------------------
+
+// float: left
+
+// Float on small screens 768px and below
+.sm-pull-left      { @media(max-width: $screen-sm){ float: left; } }
+// Float on small screens 768px and above
+.sm-min-pull-left  { @media(min-width: $screen-sm-min){ float: left; } }
+
+// Float on medium screens 992px and below
+.md-pull-left      { @media(max-width: $screen-md){ float: left; } }
+// Float on medium screens 992px and above
+.md-min-pull-left  { @media(min-width: $screen-md-min){ float: left; } }
+
+// Float on large screens 1200px and below
+.lg-pull-left      { @media(max-width: $screen-lg){ float: left; } }
+// Float on large screens 1200px and above
+.lg-min-pull-left  { @media(min-width: $screen-lg-min){ float: left; } }
+
+// float: right
+
+// Float on small screens 768px and below
+.sm-pull-right     { @media(max-width: $screen-sm){ float: right !important; } }
+// Float on small screens 768px and above
+.sm-min-pull-right { @media(min-width: $screen-sm-min){ float: right !important; } }
+
+// Float on medium screens 992px and below
+.md-pull-right     { @media(max-width: $screen-md){ float: right; } }
+// Float on medium screens 992px and above
+.md-min-pull-right { @media(min-width: $screen-md-min){ float: right; } }
+
+// Float on large screens 1200px and below
+.lg-pull-right     { @media(max-width: $screen-lg){ float: right; } }
+// Float on large screens 1200px and above
+.lg-min-pull-right { @media(min-width: $screen-lg-min){ float: right; } }
+
+
+
+
+.btn {
+  &.btn-block-xs {
+    @media(max-width: $screen-sm - 1){
+      display: block;
+      width: 100%;
+    }
+  }
+  &.btn-block-xs-min {
+    @media(min-width: $screen-sm-min - 1){
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.btn-block-sm {
+    @media(max-width: $screen-sm){
+      display: block;
+      width: 100%;
+    }
+  }
+  &.btn-block-sm-min {
+    @media(min-width: $screen-sm-min){
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.btn-block-md {
+    @media(max-width: $screen-md){
+      display: block;
+      width: 100%;
+    }
+  }
+  &.btn-block-md-min {
+    @media(min-width: $screen-md-min){
+      display: block;
+      width: 100%;
+    }
+  }
+} 
+
+// Clearfix
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after { 
+   clear: both;
+  }
+}
+
+// Positions 
+.pos-fxd { position: fixed;    }
+.pos-rlv { position: relative; }

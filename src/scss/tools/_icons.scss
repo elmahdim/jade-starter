@@ -1,0 +1,21 @@
+// Icons
+// --------------------------------------------------
+
+@import "compass/utilities/sprites";
+  $icons-layout:smart;
+  $icons-sprite-dimensions:true;
+@import "icon/*.png";
+  @include all-icon-sprites(true);
+
+[class^="icon-"],
+[class*="icon-"] {
+  margin: 0;
+  line-height: 100%;
+  position: relative;
+  display: inline-block;
+  vertical-align: text-top;
+  background-repeat: no-repeat;
+  & + * {
+    margin-left: 3px;
+  }
+}

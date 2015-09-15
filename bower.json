@@ -1,0 +1,15 @@
+{
+  "name": "jade-starter",
+  "description": "Jade Template Starter",
+  "version": "0.3.2",
+  "homepage": "https://github.com/elmahdim/jade-starter",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "*"
+  },
+  "ignore": [
+   "/assets/fonts/",
+   "/assets/images/",
+   "sache.json"
+ ]
+}

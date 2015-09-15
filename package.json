@@ -1,0 +1,15 @@
+{
+  "name": "jade-starter",
+  "description": "Jade Template starter",
+  "author": "@ElmahdiMahmoud (https://github.com/elmahdim/jade-starter)",
+  "dependencies": {
+    "express": "^4.13.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-jade": "0.8.x",
+    "grunt-contrib-uglify": "0.2.x",
+    "grunt-contrib-watch": "0.5.x",
+    "jade": "^1.11.0"
+  },
+  "engine": "node >= 0.12"
+}

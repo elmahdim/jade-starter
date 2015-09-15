@@ -1,0 +1,15 @@
+/*
+ * Author: @ElmahdiMahmoud
+ * https://github.com/elmahdim/jade-starter
+ */
+ 
+// Compass: CSS Authoring Framework.
+@import "compass", 
+        "compass/css3",
+        "compass/layout.scss";
+        
+// frontend framework
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+		
+// Tools: tools are helper classes and miscellaneous setup.
+@import "tools/all";

@@ -1,0 +1,154 @@
+// mixins
+// --------------------------------------------------
+
+// Rounded Box
+@mixin circle($size) {
+   width: $size;
+   height: $size;
+   @include border-radius(100%); 
+}
+
+// Avatar
+@mixin avatar($size) {
+  width: $size;
+  height: $size;
+  @include border-radius(100%);
+}
+
+$position-default-top:    null !default;
+$position-default-right:  null !default;
+$position-default-bottom: null !default;
+$position-default-left:   null !default;
+
+
+@mixin _position($type,
+$top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  $allowed_types: 'absolute' 'relative' 'fixed';
+
+  @if not index($allowed_types, $type) {
+    @warn "Unknow position: #{$type}.";
+  }
+
+  position: $type;
+  @each $data in top $top, right $right, bottom $bottom, left $left {
+    #{nth($data, 1)}: nth($data, 2);
+  }
+}
+
+@mixin absolute($top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  @include _position(absolute, $top, $right, $bottom, $left);
+}
+
+@mixin relative($top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  @include _position(relative, $top, $right, $bottom, $left);
+}
+
+@mixin fixed($top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  @include _position(fixed, $top, $right, $bottom, $left);
+}
+
+
+// keyframes Mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name}    { @content; }
+  @-ms-keyframes #{$name}     { @content; }
+  @keyframes #{$name}         { @content; } 
+}
+
+// Vendor Prefixing
+@mixin vendorize($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+// Animation Mixins
+@mixin animation-name($name) {
+  -o-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+@mixin animation-duration($duration) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-duration($duration) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-timing-function($timing) {
+  -o-animation-timing-function: $timing;
+  -moz-animation-timing-function: $timing;
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+@mixin animation-iteration-count($count) {
+  -o-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-direction($direction) {
+  -o-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill) {
+  -o-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+@mixin animation-play-state($state) {
+  -o-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+@mixin animation($animation) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+@mixin animation-delay($delay) {
+  -o-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  animation-animation-delay: $delay;
+}
+
+@mixin responsive-table(){
+  .table_heading {
+    display: none;
+  }
+  td {
+    padding: 10px;
+    display: block;
+    text-align: left;
+    line-height: 100%;
+    border: 0 !important;
+    &.has-th {
+      &:before {
+        content: attr(data-th)" : ";
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+  }
+}
