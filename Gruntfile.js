@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
-
-  // configure the tasks
+  // tasks configuration
   grunt.initConfig({
    
    concat: {
@@ -60,18 +59,15 @@ module.exports = function(grunt) {
     watch: {
       css: {
        files: ['src/scss/*.scss', 'src/scss/**/*.scss'],
-       tasks: ['compass']
+       tasks: ['newer:compass']
       },
       scripts: {
        files: ['src/js/*.js', 'src/js/**/*.js'],
-       tasks: ['concat']
+       tasks: ['newer:concat']
       },
         jade: {
             files: '**/*.jade',
-            tasks: [ 'jade' ],
-            options: {
-                livereload: true
-            }
+            tasks: [ 'newer:jade' ]
         }
     }
   });
@@ -82,10 +78,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
 
   // define the tasks
   grunt.registerTask( 'stylesheets', 'Compiles the stylesheets.', [ 'compass' ] );
   grunt.registerTask( 'scripts', 'Compiles the JavaScript files.', [ 'uglify', 'concat' ] );
-  grunt.registerTask( 'build', 'Compiles all of the assets and copies the files to the build directory.', [ 'jade', 'compass' ] );
-  grunt.registerTask( 'default',  'Watches the project for changes, automatically builds them and runs a server.',  [ 'build', 'watch' ] );
+  grunt.registerTask( 'build', 'Compiles all stylesheets and scripts.', [ 'jade', 'compass' ] );
+  grunt.registerTask( 'default',  'Watch the project for any changes.',  [ 'build', 'watch' ] );
 };

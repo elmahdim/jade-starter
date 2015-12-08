@@ -1,6 +1,7 @@
-var express = require("express"),
-    app     = express(),
-    port    = 8000;
+var express    = require('express'),
+    app        = express(),
+    bodyParser = require('body-parser'),
+    port       = 3000;
 app
    .use(express.static(__dirname + '/build'))
    .set('view engine', 'jade')
@@ -9,3 +10,4 @@ app
      res.render('index');
    })
    .listen(port);
+    console.log('server running on port ' + port);
