@@ -44,7 +44,14 @@ module.exports = function(grunt) {
       compile: {
         options: {
          client: false,
-         pretty: true
+         pretty: true,
+         data: function(dest, src) {
+             return {
+                 from: src,
+                 to: dest,
+                 fakeData: grunt.file.readJSON('data/fake-data.json')
+             };
+         }
         },
         files: [{
             cwd: "views",

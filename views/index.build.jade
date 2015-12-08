@@ -1,3 +1,9 @@
 extends includes/layout
 block content
-  
+  h1 Fake Data Starter
+  each value, key in fakeData
+    .list
+      h2 #{key}
+        each info in value
+          p #{info.type}
+          p #{info.content}
