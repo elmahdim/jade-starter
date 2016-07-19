@@ -1,15 +1,21 @@
 {
-  "name": "jade-starter",
-  "description": "Jade Template Starter",
-  "version": "0.3.2",
-  "homepage": "https://github.com/elmahdim/jade-starter",
-  "license": "MIT",
-  "dependencies": {
-    "bootstrap-sass": "*"
-  },
+  "name": "teoforma",
+  "description": "Customer ecommerce development for online marketplace",
+  "main": "index.js",
+  "authors": [
+    "Mahmoud Elmahdi"
+  ],
+  "license": "ISC",
+  "homepage": "",
   "ignore": [
-   "/assets/fonts/",
-   "/assets/images/",
-   "sache.json"
- ]
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  }
 }
